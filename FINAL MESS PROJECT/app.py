@@ -1,5 +1,6 @@
 import streamlit as st
 import sqlite3
+import os
 from datetime import date
 import pandas as pd
 import numpy as np
@@ -20,7 +21,7 @@ st.set_page_config(
     layout="wide"
 )
 
-DB_NAME = "mess_data.db"
+DB_NAME = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mess_data.db")
 
 
 # ============================================================
