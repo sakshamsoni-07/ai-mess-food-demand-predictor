@@ -1549,8 +1549,9 @@ elif page == "♻️ Food Waste & Cost":
 
 
         total_cost = (
-            waste_df["waste_cost"].sum()
-        )
+        waste_df.sort_values("id")["waste_cost"].iloc[-1]
+        if not waste_df.empty else 0
+        )  
 
 
         if total_prepared > 0:
